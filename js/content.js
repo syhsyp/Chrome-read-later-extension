@@ -1,8 +1,9 @@
 "use strict";
 var storage = chrome.storage.sync;
 
-function updateData() {
+function updateUI() {
     chrome.runtime.sendMessage({request: "tabInfo"}, function(response) {
+        // load indicator icon
         var tabUrl = response.url;
         var tabTitle = response.title;
         var tabIconUrl = response.iconUrl;
@@ -26,6 +27,7 @@ function updateData() {
                 });
             }
         });
+        // load sidebar UI
         loadList();
       });
     
@@ -53,7 +55,7 @@ function loadList() {
         $('.eachWeb').hover(function(event) {
             $(event.target).find('button').css('display', 'inline-block');
         }, function(event) {
-            $('.deleteWeb').css('display', 'none');
+            hideElement('.deleteWeb');
         });
         console.log(tabs);
     });
@@ -86,7 +88,7 @@ function initialUI() {
     $('body').append("<div id=extension-sidebar><ul id=\"read-later-list\"></ul></div>");
     $('body').append("<div id='extension-indicator'></div>");
 
-    // General UI setting for sidebar
+    // General UI setting
     var setMarkbar;
     var setSidebar;
     $('#extension-indicator').hover(function() {
@@ -127,8 +129,9 @@ function initialUI() {
 
 // General UI loading
 initialUI();
-updateData();
+updateUI();
 
+// update UI when there is any change to the database
 chrome.storage.onChanged.addListener(function() {
-    updateData();
+    updateUI();
 })
