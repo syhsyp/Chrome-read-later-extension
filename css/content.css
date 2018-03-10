@@ -1,0 +1,89 @@
+#extension-markbar, #extension-sidebar {
+    all:initial;
+    position: fixed;
+    float: right;
+    right: 0;
+    height: 100%;
+    z-index: 9000;
+    top: 0;
+    display: none;
+}
+
+#extension-markbar {
+    width: 50px;
+    background-color: rgba(194, 194, 194, 0.7);
+}
+
+#extension-indicator {
+    all:initial;
+    width: 21px;
+    position: fixed;
+    float: right;
+    right: 0;
+    height: 100%;
+    z-index: 8999;
+    top: 0;
+}
+
+#extension-markbar img {
+    right: 5px;
+}
+
+#extension-sidebar {
+    width: 120px;
+    background-color: rgba(194, 194, 194, 0.9);
+}
+
+#extension-sidebar img {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+}
+
+#extension-sidebar ul li:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+}
+
+#extension-readIcon {
+    all:initial;
+    width: 80%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 9001;
+}
+
+#read-later-list {
+    text-decoration: none;
+    font-size: 15px;
+    font-family: Arial;
+    list-style-type: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px 0 0 0;
+}
+
+#read-later-list a {
+    color: black;
+}
+
+#read-later-list li {
+    margin: 10px 0;
+}
+
+#read-later-list button {
+    all:initial;
+    background-color: rgba(255, 255, 255, 0.8);
+    color:black;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    display: none;
+    width: 100%;
+    font-size: 14px;
+    font-family: Arial;
+    border-radius: 0;
+    border: 1px solid #66bfff;
+}

@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "Read Later",
+    "version": "1.0",
+    
+    "description": "Add read later funtion to Chrome browser",
+    "icons": { "128": "img/icon.png" },
+    
+    "browser_action": {
+        "default_title": "Read Later",
+        "default_icon": "img/icon.png"
+    },
+    "background": {
+        "scripts": [
+            "js/background.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "css":["css/content.css"],
+            "js": ["js/jquery-3.3.1.min.js","js/content.js"]
+        }
+    ],
+    "permissions": [
+        "storage",
+        "tabs",
+        "<all_urls>"
+    ],
+    "web_accessible_resources": [
+        "img/*"
+    ],
+
+    "author": "Yuhao Shui 食草男"
+}
