@@ -57,7 +57,6 @@ function loadList() {
         }, function(event) {
             hideElement('.deleteWeb');
         });
-        console.log(tabs);
     });
 }
 
