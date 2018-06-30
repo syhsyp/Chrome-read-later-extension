@@ -146,13 +146,13 @@ function initialUI() {
         }
     });
     
-    // $('#extension-sidebar').hover(function(event) {
-    //     clearTimeout(setSidebar);
-    // }, function(event) {
-    //     setSidebar = setTimeout(function() {
-    //         hideElement('#extension-sidebar');
-    //     }, 2000);
-    // });
+    $('#extension-sidebar').hover(function(event) {
+        clearTimeout(setSidebar);
+    }, function(event) {
+        setSidebar = setTimeout(function() {
+            hideElement('#extension-sidebar');
+        }, 2000);
+    });
     
     $('body').click(function(e) {
         if (!$(e.target).is('#extension-sidebar') && !$(e.target).is('#extension-readIcon') 
