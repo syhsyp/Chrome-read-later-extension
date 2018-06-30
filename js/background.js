@@ -4,6 +4,11 @@ chrome.runtime.onMessage.addListener(
             sendResponse({url: sender.tab.url, title: sender.tab.title, iconUrl: sender.tab.favIconUrl});
         }
         if (message.request == "re-direct") {
-            chrome.tabs.update({url: message.url});
+            if (!message.ctrlpressed) {
+                chrome.tabs.update({url: message.url});
+            } else {
+                chrome.tabs.create({url: message.url, active:false});
+            }
         }
     });
+    

@@ -1,12 +1,14 @@
 #extension-markbar, #extension-sidebar {
     all:initial;
     position: fixed;
-    float: right;
-    right: 0;
+    float: left;
+    left: 0;
     height: 100%;
-    z-index: 9000;
+    z-index: 100000000;
     top: 0;
     display: none;
+    overflow: auto;
+    overflow-x: hidden;
 }
 
 #extension-markbar {
@@ -18,10 +20,10 @@
     all:initial;
     width: 21px;
     position: fixed;
-    float: right;
-    right: 0;
+    float: left;
+    left: 0;
     height: 100%;
-    z-index: 8999;
+    z-index: 10000000;
     top: 0;
 }
 
@@ -42,7 +44,21 @@
 
 #extension-sidebar ul li:hover {
     background-color: rgba(255, 255, 255, 0.8);
+}
+
+#extension-sidebar ul li a:hover {
+    color: black;
+}
+
+#extension-sidebar p {
+    margin-bottom: 0;
+    margin-top: 0;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: Arial;
+    color: black;
     cursor: pointer;
+    word-wrap: break-word;
 }
 
 #extension-readIcon {
@@ -52,10 +68,10 @@
     top: 0;
     bottom: 0;
     margin: auto;
-    z-index: 9001;
+    z-index: 100000001;
 }
 
-#read-later-list {
+.read-later-list {
     text-decoration: none;
     font-size: 15px;
     font-family: Arial;
@@ -65,15 +81,18 @@
     margin: 10px 0 0 0;
 }
 
-#read-later-list a {
+.read-later-list a {
     color: black;
+    cursor: pointer;
 }
 
-#read-later-list li {
+.read-later-list li {
     margin: 10px 0;
+    user-select: none;
+    z-index: 100000000000;
 }
 
-#read-later-list button {
+.read-later-list button, .read-later-list button:hover {
     all:initial;
     background-color: rgba(255, 255, 255, 0.8);
     color:black;
@@ -85,5 +104,12 @@
     font-size: 14px;
     font-family: Arial;
     border-radius: 0;
-    border: 1px solid #66bfff;
+    border: 1px solid black;
+    margin-top: 3px;
 }
+
+.read-later-list button:hover {
+    cursor: pointer;
+    background-color: #ff8080;
+}
+

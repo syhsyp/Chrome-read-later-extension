@@ -20,7 +20,7 @@
         {
             "matches": ["<all_urls>"],
             "css":["css/content.css"],
-            "js": ["js/jquery-3.3.1.min.js","js/content.js"]
+            "js": ["js/jquery-3.3.1.min.js","js/content.js", "js/lodash.js"]
         }
     ],
     "permissions": [
@@ -29,7 +29,8 @@
         "<all_urls>"
     ],
     "web_accessible_resources": [
-        "img/*"
+        "img/*",
+        "css/*"
     ],
 
     "author": "Yuhao Shui 食草男"
